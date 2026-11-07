@@ -70,58 +70,6 @@
     });
   });
 
-  /* ---------- rincón para chicos: dos minutos de cepillado ---------- */
-  var reloj = d.getElementById('reloj');
-  if (reloj) {
-    var TOT = 120, ZT = 30, ZN = ['Arriba, lado derecho', 'Arriba, lado izquierdo', 'Abajo, lado izquierdo', 'Abajo, lado derecho'];
-    var aro = d.getElementById('aro'), tT = d.getElementById('relojT'), tZ = d.getElementById('relojZ');
-    var bGo = d.getElementById('relojGo'), bRe = d.getElementById('relojReset'), aviso = d.getElementById('relojAviso');
-    var zonas = [].slice.call(d.querySelectorAll('.zona')), C = 2 * Math.PI * 136;
-    var hecho = 0, t0 = 0, corre = false, cuadroR = 0, zAnt = -1;
-    aro.style.strokeDasharray = C.toFixed(1);
-    function pintar() {
-      var s = Math.min(TOT, hecho + (corre ? (performance.now() - t0) / 1000 : 0)), resto = Math.ceil(TOT - s);
-      tT.textContent = Math.floor(resto / 60) + ':' + ('0' + resto % 60).slice(-2);
-      aro.style.strokeDashoffset = (C * (1 - s / TOT)).toFixed(1);
-      var z = Math.min(3, Math.floor(s / ZT)), empezo = s > 0;
-      zonas.forEach(function (el) {
-        var k = +el.getAttribute('data-z');
-        el.classList.toggle('act', empezo && s < TOT && k === z);
-        el.classList.toggle('ok', k < z || s >= TOT);
-        el.style.setProperty('--p', (k < z || s >= TOT) ? 1 : (empezo && k === z ? ((s - z * ZT) / ZT).toFixed(3) : 0));
-      });
-      if (empezo && s < TOT) {
-        tZ.textContent = ZN[z];
-        if (z !== zAnt) {
-          zAnt = z; aviso.textContent = 'Ahora: ' + ZN[z].toLowerCase();
-          reloj.classList.remove('cambia'); void reloj.offsetWidth; reloj.classList.add('cambia');
-        }
-      }
-      if (s >= TOT && corre) terminar();
-    }
-    function vuelta() { pintar(); if (corre) cuadroR = requestAnimationFrame(vuelta); }
-    function empezar() {
-      if (hecho >= TOT) reiniciar();
-      corre = true; t0 = performance.now(); reloj.classList.add('corriendo'); reloj.classList.remove('fin');
-      bGo.textContent = 'Pausa'; vuelta();
-    }
-    function pausar() {
-      hecho += (performance.now() - t0) / 1000; corre = false; cancelAnimationFrame(cuadroR);
-      reloj.classList.remove('corriendo'); bGo.textContent = 'Seguir'; pintar();
-    }
-    function terminar() {
-      corre = false; hecho = TOT; cancelAnimationFrame(cuadroR);
-      reloj.classList.remove('corriendo', 'cambia'); reloj.classList.add('fin');
-      tZ.textContent = '¡Listo! Dientes limpios'; aviso.textContent = '¡Listo! Terminaron los dos minutos.'; bGo.textContent = 'Otra vez';
-    }
-    function reiniciar() {
-      corre = false; cancelAnimationFrame(cuadroR); hecho = 0; zAnt = -1;
-      reloj.classList.remove('corriendo', 'fin', 'cambia'); bGo.textContent = 'Empezar'; tZ.textContent = '¿Listos?'; pintar();
-    }
-    bGo.addEventListener('click', function () { if (corre) pausar(); else empezar(); });
-    bRe.addEventListener('click', reiniciar);
-    pintar();
-  }
 
   /* ---------- fotos de la portada ---------- */
   var heroF = (F.hero || []).filter(Boolean), arco = d.getElementById('arcoHero'), caja = d.getElementById('heroFotos');

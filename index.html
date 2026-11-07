@@ -33,7 +33,6 @@
     <a class="cab__logo" href="#inicio" aria-label="Dra. Myrna a.n. Carli · Inicio"><img src="assets/img/logo-myrna.svg" alt="Myrna a.n. Carli · Odontóloga" width="196" height="73"></a>
     <nav class="cab__nav" id="menu" aria-label="Secciones">
       <a href="#especialidades">Especialidades</a>
-      <a href="#chicos">Para chicos</a>
       <a href="#doctora">La doctora</a>
       <a href="#turnos">Turnos</a>
       <a href="#ubicacion">Dónde estamos</a>
@@ -153,48 +152,6 @@
         <h3>General y estética</h3>
         <p>Controles, limpiezas, arreglos, tratamientos de conducto y extracciones. Y estética dental: blanqueamiento y carillas.</p>
       </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ RINCÓN PARA CHICOS ============ -->
-<section class="sec chicos" id="chicos">
-  <div class="cont chi">
-    <div class="chi__txt">
-      <p class="rotulo rv">Rincón para chicos</p>
-      <h2 class="partir">Dos minutos de <em>cepillado</em>, con el diente</h2>
-      <svg class="sonrisa" aria-hidden="true"><use href="#sonrisa"/></svg>
-      <p class="rv">Un juego para cepillarse los dientes con los chicos. Apretá <b>Empezar</b> y seguí al diente: cada 30 segundos te avisa qué zona de la boca cepillar, hasta completar los dos minutos.</p>
-      <ul class="chi__tips rv">
-        <li>Cepillá cada zona por afuera, por adentro y donde se mastica.</li>
-        <li>Al final, una pasada suave por la lengua.</li>
-      </ul>
-      <p class="chi__nota rv">Qué cepillo y cuánta pasta usar depende de la edad: consultalo con la Dra. en el próximo control.</p>
-    </div>
-    <div class="chi__juego rv" style="--d:.1s">
-      <div class="reloj" id="reloj">
-        <svg class="reloj__aro" viewBox="0 0 300 300" aria-hidden="true"><circle class="reloj__fondo" cx="150" cy="150" r="136"/><circle class="reloj__avance" id="aro" cx="150" cy="150" r="136"/></svg>
-        <svg class="diente mini reloj__diente" viewBox="30 0 200 205" aria-hidden="true">
-          <path class="mini__brazo" d="M172,124 Q184,134 197,127"/>
-          <g class="acc acc--cepillo"><g transform="rotate(-14 200 120)"><rect class="mini__mango" x="194" y="100" width="12" height="78" rx="6"/><rect class="mini__cabeza" x="191" y="50" width="18" height="52" rx="7"/><path class="mini__cerdas" d="M191,58 h-10 M191,67 h-10 M191,76 h-10 M191,85 h-10 M191,94 h-10"/></g></g>
-          <path class="diente__cont" d="M110,34 C82,34 63,45 54,62 C45,79 45,101 51,124 C57,148 64,175 71,188 C76,197 87,197 91,186 C97,167 101,147 106,140 C109,136 115,136 118,140 C123,147 127,167 133,186 C137,197 148,197 153,188 C160,175 167,148 173,124 C179,101 179,79 170,62 C161,45 142,34 110,34 Z"/>
-          <path class="diente__son" d="M84,96 Q110,124 136,96"/><path class="diente__ojo" d="M92,74 L92,83"/><path class="diente__ojo diente__ojo--abre" d="M128,74 L128,83"/><path class="diente__ojo diente__ojo--guina" d="M121,81 Q128,72 135,81"/>
-        </svg>
-        <span class="pop" style="--a:0deg"></span><span class="pop" style="--a:45deg"></span><span class="pop" style="--a:90deg"></span><span class="pop" style="--a:135deg"></span>
-        <span class="pop" style="--a:180deg"></span><span class="pop" style="--a:225deg"></span><span class="pop" style="--a:270deg"></span><span class="pop" style="--a:315deg"></span>
-      </div>
-      <div class="reloj__t"><span id="relojT">2:00</span><small id="relojZ">¿Listos?</small></div>
-      <div class="zonas" aria-hidden="true">
-        <div class="zona" data-z="0">Arriba · derecha<i></i></div>
-        <div class="zona" data-z="1">Arriba · izquierda<i></i></div>
-        <div class="zona" data-z="3">Abajo · derecha<i></i></div>
-        <div class="zona" data-z="2">Abajo · izquierda<i></i></div>
-      </div>
-      <div class="chi__bts">
-        <button class="bt bt--rosa" type="button" id="relojGo">Empezar</button>
-        <button class="bt bt--linea" type="button" id="relojReset">Reiniciar</button>
-      </div>
-      <p class="sr" aria-live="polite" id="relojAviso"></p>
     </div>
   </div>
 </section>
@@ -319,7 +276,7 @@
 <footer class="pie">
   <div class="cont pie__in">
     <div class="pie__marca">
-      <img src="assets/img/logo-myrna.svg" alt="Myrna a.n. Carli · Odontóloga" width="196" height="73" loading="lazy">
+      <b class="pie__nombre">Dra. Myrna a.n. Carli</b>
       <p>Odontopediatría, ortodoncia y prótesis.</p>
     </div>
     <div class="pie__col"><b>Consultorio</b><span>Coronel Díaz 2381, Piso 7, Depto B</span><span>Palermo, CABA</span></div>
