@@ -213,7 +213,6 @@ p{margin:0}
 /* ---------- cierre ---------- */
 .cierre{padding:110px 0 120px;text-align:center;background:radial-gradient(70% 90% at 50% 100%,var(--rosa-suave),var(--crema) 70%)}
 .cierre__in{display:flex;flex-direction:column;align-items:center;gap:18px}
-.cierre__diente{width:86px;height:auto;margin-bottom:4px}
 .cierre .sonrisa{margin:2px auto 4px}
 .cierre h2{font-size:clamp(40px,5.4vw,76px)}
 .cierre p{color:var(--tinta-2);font-size:19px;margin-bottom:12px}
@@ -221,7 +220,7 @@ p{margin:0}
 /* ---------- pie ---------- */
 .pie{background:var(--papel);border-top:1px solid var(--linea);padding:70px 0 30px;font-size:15px;color:var(--tinta-2)}
 .pie__in{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--linea)}
-.pie__nombre{display:block;font:500 24px/1.2 var(--serif);color:var(--tinta);margin-bottom:8px}
+.pie__marca img{width:180px;height:auto;margin-bottom:14px}
 .pie__col{display:flex;flex-direction:column;gap:10px}
 .pie__col b{font:600 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--vino);margin-bottom:4px}
 .pie__col a{text-decoration:none;transition:color .3s}
