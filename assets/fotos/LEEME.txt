@@ -1,0 +1,2 @@
+Acá van las fotos de la página (JPG, de 1200 a 1600 px del lado largo).
+Después de copiarlas, anotalas en assets/js/fotos.js.
